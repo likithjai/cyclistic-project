@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{df\PYGZus{}dict}\PYG{o}{.}\PYG{n}{keys}\PYG{p}{())}
+\PYG{k}{for} \PYG{n}{k}\PYG{p}{,}\PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{df\PYGZus{}dict}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{k}\PYG{p}{,}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{v}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{))}
+\end{Verbatim}

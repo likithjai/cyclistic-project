@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}month\PYGZus{}num}\PYG{p}{(}\PYG{n}{row}\PYG{p}{):}
+    \PYG{n}{month\PYGZus{}dt}\PYG{o}{=}\PYG{n}{dt}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}month\PYGZsq{}}\PYG{p}{],}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}b\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{month\PYGZus{}dt}\PYG{o}{.}\PYG{n}{month}
+
+\PYG{k}{def} \PYG{n+nf}{plot\PYGZus{}by\PYGZus{}month}\PYG{p}{(}\PYG{n}{in\PYGZus{}col}\PYG{p}{,}\PYG{n}{in\PYGZus{}df}\PYG{p}{,}\PYG{n}{ylabel\PYGZus{}str}\PYG{p}{,}\PYG{n}{figname}\PYG{p}{):}
+    \PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}month\PYGZus{}num\PYGZsq{}} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{in\PYGZus{}df}\PYG{o}{.}\PYG{n}{columns}\PYG{p}{:}
+        \PYG{n}{in\PYGZus{}df}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[:,}\PYG{l+s+s1}{\PYGZsq{}month\PYGZus{}num\PYGZsq{}}\PYG{p}{]}\PYG{o}{=}\PYG{n}{in\PYGZus{}df}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{get\PYGZus{}month\PYGZus{}num}\PYG{p}{,}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{n}{in\PYGZus{}df}\PYG{o}{.}\PYG{n}{reset\PYGZus{}index}\PYG{p}{(}\PYG{n}{inplace}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{in\PYGZus{}df}\PYG{o}{.}\PYG{n}{sort\PYGZus{}values}\PYG{p}{(}\PYG{n}{by}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}month\PYGZus{}num\PYGZsq{}}\PYG{p}{],}\PYG{n}{inplace}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{fig}\PYG{p}{,}\PYG{n}{ax}\PYG{o}{=}\PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{))}
+    \PYG{n}{ax}\PYG{o}{.}\PYG{n}{bar}\PYG{p}{(}\PYG{n}{in\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}month\PYGZus{}num\PYGZsq{}}\PYG{p}{],}\PYG{n}{in\PYGZus{}df}\PYG{p}{[}\PYG{n}{in\PYGZus{}col}\PYG{p}{])}
+    \PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xticks}\PYG{p}{(}\PYG{n}{in\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}month\PYGZus{}num\PYGZsq{}}\PYG{p}{])}
+    \PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xticklabels}\PYG{p}{(}\PYG{n}{in\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}month\PYGZsq{}}\PYG{p}{])}
+    \PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{n}{ylabel\PYGZus{}str}\PYG{p}{)}
+    \PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Month\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{fig}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}figs/\PYGZsq{}}\PYG{o}{+}\PYG{n}{figname}\PYG{p}{,} \PYG{n}{dpi}\PYG{o}{=}\PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{n}{bbox\PYGZus{}inches}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}tight\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}

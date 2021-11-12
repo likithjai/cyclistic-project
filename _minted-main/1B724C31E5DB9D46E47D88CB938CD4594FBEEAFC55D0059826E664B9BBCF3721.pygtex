@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{rlength}\PYG{p}{(}\PYG{n}{row}\PYG{p}{):}
+    \PYG{n}{start\PYGZus{}dt}\PYG{p}{,}\PYG{n}{end\PYGZus{}dt}\PYG{o}{=}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}started\PYGZus{}at\PYGZsq{}}\PYG{p}{],}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ended\PYGZus{}at\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{start\PYGZus{}dt}\PYG{p}{,}\PYG{n}{end\PYGZus{}dt}\PYG{o}{=}\PYG{p}{[}\PYG{n}{dt}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}Y\PYGZhy{}\PYGZpc{}m\PYGZhy{}}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s1}{ \PYGZpc{}H:\PYGZpc{}M:\PYGZpc{}S\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{p}{[}\PYG{n}{start\PYGZus{}dt}\PYG{p}{,}\PYG{n}{end\PYGZus{}dt}\PYG{p}{]]}
+    \PYG{k}{if} \PYG{n}{end\PYGZus{}dt}\PYG{o}{\PYGZgt{}=}\PYG{n}{start\PYGZus{}dt}\PYG{p}{:}
+        \PYG{n}{rlen}\PYG{o}{=}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{end\PYGZus{}dt}\PYG{o}{\PYGZhy{}}\PYG{n}{start\PYGZus{}dt}\PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:}
+         \PYG{n}{rlen}\PYG{o}{=}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{start\PYGZus{}dt}\PYG{o}{\PYGZhy{}}\PYG{n}{end\PYGZus{}dt}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{rlen}
+\PYG{k}{def} \PYG{n+nf}{rdur}\PYG{p}{(}\PYG{n}{row}\PYG{p}{):}
+    \PYG{n}{start\PYGZus{}dt}\PYG{p}{,} \PYG{n}{end\PYGZus{}dt}\PYG{o}{=}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}started\PYGZus{}at\PYGZsq{}}\PYG{p}{],}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ended\PYGZus{}at\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{start\PYGZus{}dt}\PYG{p}{,}\PYG{n}{end\PYGZus{}dt}\PYG{o}{=}\PYG{p}{[}\PYG{n}{dt}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}Y\PYGZhy{}\PYGZpc{}m\PYGZhy{}}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s1}{ \PYGZpc{}H:\PYGZpc{}M:\PYGZpc{}S\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{p}{[}\PYG{n}{start\PYGZus{}dt}\PYG{p}{,}\PYG{n}{end\PYGZus{}dt}\PYG{p}{]]}
+    \PYG{k}{if} \PYG{n}{end\PYGZus{}dt}\PYG{o}{\PYGZgt{}=}\PYG{n}{start\PYGZus{}dt}\PYG{p}{:}
+        \PYG{n}{rlen}\PYG{o}{=}\PYG{n}{end\PYGZus{}dt}\PYG{o}{\PYGZhy{}}\PYG{n}{start\PYGZus{}dt}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{rlen}\PYG{o}{=}\PYG{n}{start\PYGZus{}dt}\PYG{o}{\PYGZhy{}}\PYG{n}{end\PYGZus{}dt}
+    \PYG{k}{return} \PYG{n}{rlen}\PYG{o}{.}\PYG{n}{total\PYGZus{}seconds}\PYG{p}{()}
+
+\PYG{k}{def} \PYG{n+nf}{weekday}\PYG{p}{(}\PYG{n}{row}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{dt}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}started\PYGZus{}at\PYGZsq{}}\PYG{p}{],}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}Y\PYGZhy{}\PYGZpc{}m\PYGZhy{}}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s1}{ \PYGZpc{}H:\PYGZpc{}M:\PYGZpc{}S\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{strftime}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZpc{}a}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{k}\PYG{p}{,}\PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{df\PYGZus{}dict}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+    \PYG{n}{v}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[:,}\PYG{l+s+s1}{\PYGZsq{}ride\PYGZus{}length\PYGZsq{}}\PYG{p}{]}\PYG{o}{=}\PYG{n}{v}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{rlength}\PYG{p}{,}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{n}{v}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[:,}\PYG{l+s+s1}{\PYGZsq{}ride\PYGZus{}duration\PYGZsq{}}\PYG{p}{]}\PYG{o}{=}\PYG{n}{v}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{rdur}\PYG{p}{,}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{n}{v}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[:,}\PYG{l+s+s1}{\PYGZsq{}day\PYGZus{}of\PYGZus{}week\PYGZsq{}}\PYG{p}{]}\PYG{o}{=}\PYG{n}{v}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{weekday}\PYG{p}{,}\PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+\end{Verbatim}

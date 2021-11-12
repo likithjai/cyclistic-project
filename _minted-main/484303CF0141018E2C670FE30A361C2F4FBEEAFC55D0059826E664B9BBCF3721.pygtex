@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{date\PYGZus{}list}\PYG{o}{=}\PYG{n+nb}{sorted}\PYG{p}{([}\PYG{n}{dt}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}b \PYGZpc{}Y\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{df\PYGZus{}dict}\PYG{o}{.}\PYG{n}{keys}\PYG{p}{()])}
+\PYG{n}{keys\PYGZus{}list}\PYG{o}{=}\PYG{p}{[}\PYG{n}{dt}\PYG{o}{.}\PYG{n}{strftime}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}b \PYGZpc{}Y\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{date\PYGZus{}list}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{}now collect dataframes according to keys\PYGZus{}list}
+\PYG{n}{df\PYGZus{}list}\PYG{o}{=}\PYG{p}{[}\PYG{n}{df\PYGZus{}dict}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]} \PYG{k}{for} \PYG{n}{k} \PYG{o+ow}{in} \PYG{n}{keys\PYGZus{}list}\PYG{p}{]}
+\PYG{n}{df}\PYG{o}{=}\PYG{n}{pd}\PYG{o}{.}\PYG{n}{concat}\PYG{p}{(}\PYG{n}{df\PYGZus{}list}\PYG{p}{)}
+\PYG{n}{df}\PYG{o}{.}\PYG{n}{to\PYGZus{}csv}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}data/master.csv\PYGZsq{}}\PYG{p}{,}\PYG{n}{sep}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{index}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
+\end{Verbatim}

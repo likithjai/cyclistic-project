@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{from} \PYG{n+nn}{pathlib} \PYG{k+kn}{import} \PYG{n}{Path}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{import} \PYG{n+nn}{itertools} \PYG{k}{as} \PYG{n+nn}{it}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{from} \PYG{n+nn}{sklearn.linear\PYGZus{}model} \PYG{k+kn}{import} \PYG{n}{LinearRegression}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{sqlite3} \PYG{k}{as} \PYG{n+nn}{sql}
+\PYG{k+kn}{import} \PYG{n+nn}{os}
+\PYG{k+kn}{from} \PYG{n+nn}{datetime} \PYG{k+kn}{import} \PYG{n}{datetime} \PYG{k}{as} \PYG{n}{dt}
+
+\PYG{n}{con}\PYG{o}{=}\PYG{n}{sql}\PYG{o}{.}\PYG{n}{connect}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}fitbit.db\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{cur}\PYG{o}{=}\PYG{n}{con}\PYG{o}{.}\PYG{n}{cursor}\PYG{p}{()}
+\PYG{n}{p}\PYG{o}{=}\PYG{n}{Path}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}/home/likith/Documents/job\PYGZus{}hunt\PYGZus{}docs/coursera/google\PYGZhy{}data\PYGZhy{}analytics/8\PYGZus{}capstone/week2/directory\PYGZus{}env/.venv/data\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{glob}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}*\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{p}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+    \PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}\PYG{o}{.}\PYG{n}{to\PYGZus{}sql}\PYG{p}{(}\PYG{n}{i}\PYG{o}{.}\PYG{n}{stem}\PYG{p}{,}\PYG{n}{con}\PYG{p}{,}\PYG{n}{if\PYGZus{}exists}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}append\PYGZsq{}}\PYG{p}{,}\PYG{n}{index}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
+\end{Verbatim}

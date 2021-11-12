@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n}{query}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+s2}{select VeryActiveDistance, ModeratelyActiveDistance,}
+\PYG{l+s+s2}{LightActiveDistance, SedentaryActiveDistance, VeryActiveMinutes,}
+\PYG{l+s+s2}{FairlyActiveMinutes, LightlyActiveMinutes, SedentaryMinutes}
+\PYG{l+s+s2}{from dailyActivity}
+\PYG{l+s+s2}{EXCEPT}
+\PYG{l+s+s2}{select VeryActiveDistance, ModeratelyActiveDistance, LightActiveDistance,}
+\PYG{l+s+s2}{SedentaryActiveDistance, VeryActiveMinutes,}
+\PYG{l+s+s2}{FairlyActiveMinutes, LightlyActiveMinutes, SedentaryMinutes}
+\PYG{l+s+s2}{from dailyIntensities}
+\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{n}{cur}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{query}\PYG{p}{)}
+\end{Verbatim}

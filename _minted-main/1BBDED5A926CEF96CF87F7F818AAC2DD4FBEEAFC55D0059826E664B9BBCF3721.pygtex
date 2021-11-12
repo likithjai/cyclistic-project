@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{pandas} \PYG{k}{as} \PYG{n+nn}{pd}
+\PYG{k+kn}{from} \PYG{n+nn}{pathlib} \PYG{k+kn}{import} \PYG{n}{Path}
+\PYG{k+kn}{from} \PYG{n+nn}{datetime} \PYG{k+kn}{import} \PYG{n}{datetime} \PYG{k}{as} \PYG{n}{dt}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{n}{pd}\PYG{o}{.}\PYG{n}{set\PYGZus{}option}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}display.max\PYGZus{}columns\PYGZsq{}}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{)}
+
+\PYG{n}{p}\PYG{o}{=}\PYG{n}{Path}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}/home/likith/Documents/job\PYGZus{}hunt\PYGZus{}docs/coursera/google\PYGZhy{}data\PYGZhy{}analytics/8\PYGZus{}capstone/week2/directory\PYGZus{}env/.venv2/data\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{glob}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}*\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{df\PYGZus{}dict}\PYG{o}{=}\PYG{p}{\PYGZob{}\PYGZcb{}}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{p}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{i}\PYG{o}{.}\PYG{n}{stem}\PYG{o}{!=}\PYG{l+s+s1}{\PYGZsq{}master\PYGZsq{}}\PYG{p}{:}
+        \PYG{n}{curr\PYGZus{}date}\PYG{o}{=}\PYG{n}{dt}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{i}\PYG{o}{.}\PYG{n}{stem}\PYG{o}{.}\PYG{n}{split}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZsq{}}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}Y\PYGZpc{}m\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{date\PYGZus{}str}\PYG{o}{=}\PYG{n}{dt}\PYG{o}{.}\PYG{n}{strftime}\PYG{p}{(}\PYG{n}{curr\PYGZus{}date}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}b \PYGZpc{}Y\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{df\PYGZus{}dict}\PYG{p}{[}\PYG{n}{date\PYGZus{}str}\PYG{p}{]}\PYG{o}{=}\PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}csv}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+\end{Verbatim}

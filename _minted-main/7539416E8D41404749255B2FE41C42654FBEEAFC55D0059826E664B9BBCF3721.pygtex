@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{query}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+s2}{select Calories from dailyActivity}
+\PYG{l+s+s2}{EXCEPT}
+\PYG{l+s+s2}{select Calories from dailyCalories;}
+\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{n}{cur}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{n}{query}\PYG{p}{)}
+\end{Verbatim}

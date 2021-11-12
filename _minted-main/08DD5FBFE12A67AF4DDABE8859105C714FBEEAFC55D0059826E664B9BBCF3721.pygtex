@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n}{dailyIntensities\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Date\PYGZsq{}}\PYG{p}{]}\PYG{o}{=}\PYG{n}{dailyIntensities\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ActivityDay\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{dt\PYGZus{}formatter}\PYG{p}{)}
+  \PYG{n}{dailyActivity\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Date\PYGZsq{}}\PYG{p}{]}\PYG{o}{=}\PYG{n}{dailyActivity\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}ActivityDate\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{dt\PYGZus{}formatter}\PYG{p}{)}
+  \PYG{n}{sleepDay\PYGZus{}df}\PYG{o}{=}\PYG{n}{pd}\PYG{o}{.}\PYG{n}{read\PYGZus{}sql}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}select * from sleepDay\PYGZsq{}}\PYG{p}{,}\PYG{n}{con}\PYG{p}{)}
+  \PYG{n}{sleepDay\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Date\PYGZsq{}}\PYG{p}{]}\PYG{o}{=}\PYG{n}{sleepDay\PYGZus{}df}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}SleepDay\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{dt\PYGZus{}formatter2}\PYG{p}{)}
+\end{Verbatim}

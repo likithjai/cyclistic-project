@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{dt\PYGZus{}formatter}\PYG{p}{(}\PYG{n}{dt\PYGZus{}str}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{dt}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{dt\PYGZus{}str}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}m/}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s1}{/\PYGZpc{}Y\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{def} \PYG{n+nf}{dt\PYGZus{}formatter2}\PYG{p}{(}\PYG{n}{dt\PYGZus{}str}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n}{dt}\PYG{o}{.}\PYG{n}{strptime}\PYG{p}{(}\PYG{n}{dt\PYGZus{}str}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}m/}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s1}{/\PYGZpc{}Y \PYGZpc{}I:\PYGZpc{}M:\PYGZpc{}S \PYGZpc{}p\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}

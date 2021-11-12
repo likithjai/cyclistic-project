@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{cur}\PYG{o}{.}\PYG{n}{execute}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}SELECT name from sqlite\PYGZus{}master where type=\PYGZsq{}table\PYGZsq{};\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{tables}\PYG{o}{=}\PYG{n}{cur}\PYG{o}{.}\PYG{n}{fetchall}\PYG{p}{()}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{tables}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{tables}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ tables in database\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}
